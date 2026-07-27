@@ -1,15 +1,8 @@
 import cineAI from "../assets/cineAi.png";
 import taskflow from "../assets/taskFLow.png";
-interface Project {
- id: number;
- title: string;
- description: string;
- tags: string[];
- image: string;
- url: string | undefined;
-}
+import portfolio from "../assets/portfolio.png";
 
-export const projectData: Project[] = [
+export const projectData = [
  {
   id: 1,
   title: "Noman Ghaffar - Portfolio",
@@ -22,7 +15,7 @@ export const projectData: Project[] = [
    "Framer Motion",
    "Responsive Design",
   ],
-  image: "",
+  image: portfolio,
   url: undefined,
  },
  {
@@ -30,7 +23,6 @@ export const projectData: Project[] = [
   title: "CineAI",
   description:
    "Built a Netflix-style movie platform using React, Redux Toolkit, Firebase, TMDB API, and Google Gemini AI, enabling secure authentication and AI-powered personalised movie recommendations.",
-
   tags: [
    "React",
    "Redux Toolkit",

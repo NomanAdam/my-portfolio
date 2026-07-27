@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi";
 export default function Hero() {
  return (
-  <div className="flex flex-col items-center justify-center mt-15 ">
+  <div className="flex flex-col items-center justify-center mt-28 ">
    <img
     src={myPic}
     alt="img"
