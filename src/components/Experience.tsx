@@ -13,7 +13,7 @@ export default function Experience() {
       <span className="text-neutral-400 text-sm">{exp.duration}</span>
      </div>
      <p className="text-neutral-400 mb-3">{exp.place}</p>
-     <p className="text-neutral-300">{exp.description}</p>
+     <p className="text-neutral-300 ">{exp.description}</p>
     </div>
    </div>
   </section>
