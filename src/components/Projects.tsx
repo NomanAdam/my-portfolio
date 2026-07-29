@@ -2,7 +2,7 @@ import { projectData } from "../constants/projectsData";
 
 export default function Projects() {
  return (
-  <section className="mt-28 ">
+  <section className="scroll-mt-28 mb-36 " id="projects" data-id="2">
    <h1 className="text-white text-3xl font-medium capitalize mb-8 text-center">
     Projects
    </h1>

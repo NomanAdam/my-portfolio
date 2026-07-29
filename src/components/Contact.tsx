@@ -10,12 +10,22 @@ export default function Contact() {
   console.log(message);
  };
  return (
-  <section className=" mt-28 text-white flex items-center justify-center flex-col">
+  <section
+   className=" mb-20 scroll-mt-28 text-white flex items-center justify-center flex-col"
+   id="contact"
+   data-id="5"
+  >
    <h1 className=" text-3xl font-medium mb-6 ">Contact Me</h1>
    <p className="mb-10">
     Please contact me directly at{" "}
-    <a className="cursor-pointer underline">nomanbinadam@gmail.com</a>or through
-    this form.
+    <a
+     className="cursor-pointer underline mr-1"
+     href="mailto:nomanbinadam@gmail.com"
+    >
+     nomanbinadam@gmail.com
+    </a>
+    {""}
+    or through this form.
    </p>
    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
     <input
@@ -32,10 +42,10 @@ export default function Contact() {
     ></textarea>
     <button
      type="submit"
-     className="self-start bg-[#29303d] rounded-full  px-8 py-4 cursor-pointer flex items-center justify-center gap-2"
+     className="group self-start bg-[#29303d] rounded-full  px-8 py-4 cursor-pointer flex items-center justify-center gap-2"
     >
      Submit
-     <FaPaperPlane />
+     <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:-translate-y-1 group-hover:translate-x-1" />
     </button>
    </form>
   </section>

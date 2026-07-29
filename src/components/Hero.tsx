@@ -2,9 +2,20 @@ import { BsArrowRight } from "react-icons/bs";
 import myPic from "../assets/myPic.jpeg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi";
-export default function Hero() {
+type NavbarProps = {
+ setActiveTab: React.Dispatch<React.SetStateAction<number>>;
+ setTimeOfLastClick: React.Dispatch<React.SetStateAction<number>>;
+};
+export default function Hero({
+ setActiveTab,
+ setTimeOfLastClick,
+}: NavbarProps) {
  return (
-  <div className="flex flex-col items-center justify-center mt-28 ">
+  <div
+   className="flex flex-col items-center justify-center mb-28 mt-28 scroll-mt-[200rem] "
+   id="home"
+   data-id="1"
+  >
    <img
     src={myPic}
     alt="img"
@@ -21,12 +32,26 @@ export default function Hero() {
     </p>
    </div>
    <div className="text-white flex  gap-2 items-center justify-center">
-    <button className="flex items-center gap-2 bg-[#292f3d] px-7 py-3 rounded-full cursor-pointer   ">
-     Contact me here <BsArrowRight />
+    <button
+     className="group flex items-center gap-2 bg-[#292f3d] px-7 py-3 rounded-full cursor-pointer   "
+     onClick={(e) => {
+      e.preventDefault();
+      setActiveTab(5);
+      setTimeOfLastClick(Date.now());
+      document.querySelector("#contact")?.scrollIntoView();
+     }}
+    >
+     Contact me here{" "}
+     <BsArrowRight className="opacity-70 transition group-hover:translate-x-1" />
     </button>
-    <button className="flex items-center gap-2 bg-[#292f3d] px-7 py-3 rounded-full cursor-pointer ">
-     Download CV <HiDownload />
-    </button>
+    <a
+     className="group flex items-center gap-2 bg-[#292f3d] px-7 py-3 rounded-full cursor-pointer "
+     href="https://drive.google.com/file/d/1ROAAuKDRNzhs7RXMmlMKpKf1g_LAiU2Z/view?usp=sharing"
+     target="_blank"
+    >
+     Download CV{" "}
+     <HiDownload className="opacity-60 transition group-hover:translate-y-1" />
+    </a>
     <a
      href="https://www.linkedin.com/in/noman-ghaffar-dev/"
      target="_blank"

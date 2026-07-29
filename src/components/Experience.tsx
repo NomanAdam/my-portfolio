@@ -2,7 +2,11 @@ import { experienceData } from "../constants/experienceData";
 const exp = experienceData;
 export default function Experience() {
  return (
-  <section className="mt-28 max-w-2xl mx-auto">
+  <section
+   className="mb-20   max-w-2xl mx-auto scroll-mt-28"
+   id="experience"
+   data-id="4"
+  >
    <h1 className="text-white text-3xl font-medium mb-8 text-center">
     Experience
    </h1>

@@ -2,8 +2,8 @@ import { skillsData } from "../constants/skillsData";
 
 export default function Skills() {
  return (
-  <>
-   <h1 className="text-white text-center text-3xl font-medium mb-8  mt-28 ">
+  <div id="skills" data-id="3" className="scroll-mt-30 mb-30">
+   <h1 className="text-white text-center text-3xl font-medium mb-18  ">
     My Skills
    </h1>
    <div className="max-w-2xl mx-auto">
@@ -18,6 +18,6 @@ export default function Skills() {
      ))}
     </ul>
    </div>
-  </>
+  </div>
  );
 }

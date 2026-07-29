@@ -13,3 +13,6 @@ body {
 @theme {
  --font-lmroman: "LM Roman", serif;
 }
+html {
+ scroll-behavior: smooth;
+}
