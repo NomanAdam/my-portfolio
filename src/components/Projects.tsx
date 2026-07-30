@@ -1,5 +1,5 @@
 import { projectData } from "../constants/projectsData";
-
+import { motion } from "motion/react";
 export default function Projects() {
  return (
   <section className="scroll-mt-28 mb-36 " id="projects" data-id="2">
@@ -7,9 +7,15 @@ export default function Projects() {
     Projects
    </h1>
    <div className="text-white  flex flex-col gap-6 items-center ">
-    {projectData.map((item) => {
+    {projectData.map((item, index) => {
      const content = (
-      <div className="bg-[#29303d] w-150 flex rounded-2xl overflow-hidden">
+      <motion.div
+       initial={{ scale: 0.9, opacity: 0, y: 20 }}
+       whileInView={{ scale: 1, opacity: 1, y: 0 }}
+       transition={{ duration: 0.3, ease: "easeOut" }}
+       viewport={{ once: true }}
+       className={`${index % 2 !== 0 ? "flex-row-reverse" : ""} *:bg-[#29303d] w-150 flex rounded-2xl overflow-hidden`}
+      >
        <div className="flex-1 p-6">
         <h2 className="text-xl font-medium">{item.title}</h2>
         <p className="text-neutral-400 mt-2">{item.description}</p>
@@ -30,7 +36,7 @@ export default function Projects() {
          />
         </div>
        )}
-      </div>
+      </motion.div>
      );
      return item.url ? (
       <a href={item.url} key={item.id} target="_blank">
