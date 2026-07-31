@@ -1,15 +1,8 @@
 @import "tailwindcss";
 
-body {
+/* body {
  background-color: #111827;
-}
-@font-face {
- font-family: "LM Roman";
- src: url("./index.css") format("woff2");
- font-weight: normal;
- font-style: normal;
-}
-
+} */
 @theme {
  --font-lmroman: "LM Roman", serif;
 }
