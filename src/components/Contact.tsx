@@ -22,10 +22,10 @@ export default function Contact() {
 
   try {
    await emailjs.send(
-    "service_5ug6z8g",
-    "template_j5mc04q",
+    import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
     { email, message },
-    "_8ExnQbr5of6ce_IT",
+    import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
    );
    setEmail("");
    setMessage("");
@@ -40,12 +40,12 @@ export default function Contact() {
 
  return (
   <section
-   className="mb-20 scroll-mt-28 text-white flex items-center justify-center flex-col"
+   className="mb-10 sm:mb-20 scroll-mt-28 text-white flex items-center justify-center flex-col"
    id="contact"
    data-id="5"
   >
-   <h1 className="text-3xl font-medium mb-6">Contact Me</h1>
-   <p className="mb-10">
+   <h1 className="text-2xl sm:text-3xl font-medium mb-6">Contact Me</h1>
+   <p className=" mb-10 text-center px-1 sm:px-0  ">
     Please contact me directly at{" "}
     <a
      className="cursor-pointer underline mr-1"
@@ -56,11 +56,14 @@ export default function Contact() {
     or through this form.
    </p>
 
-   <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+   <form
+    onSubmit={handleSubmit}
+    className="flex flex-col gap-4 w-full max-w-140 px-4 sm:px-0"
+   >
     <input
      type="email"
      placeholder="Your email"
-     className="h-14 px-4 rounded border border-solid w-140"
+     className="h-14 px-4 rounded border border-solid w-full"
      onChange={(e) => setEmail(e.target.value)}
      value={email}
      required
@@ -70,21 +73,21 @@ export default function Contact() {
      onChange={(e) => setMessage(e.target.value)}
      placeholder="Your message"
      value={message}
-     className="h-30 px-4 rounded border border-solid w-140"
+     className="h-30 px-4 rounded border border-solid w-full"
      required
      maxLength={5000}
     />
     <button
      disabled={status === "sending"}
      type="submit"
-     className="group self-start bg-[#29303d] rounded-full px-8 py-4 cursor-pointer flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+     className="group self-start bg-[#29303d] rounded-full px-4 py-2 sm:px-8 sm:py-4 cursor-pointer flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
     >
      {status === "sending" ? "Sending..." : "Submit"}
      <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:-translate-y-1 group-hover:translate-x-1" />
     </button>
 
     {status === "success" && (
-     <p className="text-[#292f3d] text-sm">
+     <p className="text-green-400  text-sm">
       Message sent — I'll get back to you soon.
      </p>
     )}

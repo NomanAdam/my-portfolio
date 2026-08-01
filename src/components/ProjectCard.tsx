@@ -21,7 +21,7 @@ export default function ProjectCard({ item, index }: ProjectCardProps) {
   target: ref,
   offset: ["0 1", "1.33 1"],
  });
- const scale = useTransform(scrollYProgress, [0, 1], [0.75, 1]);
+ const scale = useTransform(scrollYProgress, [0, 1], [0, 1]);
  const opacity = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
  const content = (
@@ -30,10 +30,10 @@ export default function ProjectCard({ item, index }: ProjectCardProps) {
    style={{ scale, opacity }}
    className={`${
     index % 2 !== 0 ? "flex-row-reverse" : ""
-   } bg-[#29303d] w-150 flex rounded-2xl overflow-hidden`}
+   } bg-[#29303d] mx-4 sm:mx-6  md:w-150 md:flex rounded-2xl overflow-hidden`}
   >
    <div className="flex-1 p-6">
-    <h2 className="text-xl font-medium">{item.title}</h2>
+    <h2 className="text-lg sm:text-xl font-medium">{item.title}</h2>
     <p className="text-neutral-400 mt-2">{item.description}</p>
     <ul className="flex flex-wrap gap-2 mt-4">
      {item.tags.map((tag) => (
@@ -44,7 +44,7 @@ export default function ProjectCard({ item, index }: ProjectCardProps) {
     </ul>
    </div>
    {item.image && (
-    <div className="flex-1 pt-6 overflow-visible">
+    <div className="hidden  md:flex flex-1 pt-6 overflow-visible ">
      <img
       src={item.image}
       alt={item.title}

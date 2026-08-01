@@ -12,7 +12,7 @@ export default function Hero({
 }: NavbarProps) {
  return (
   <div
-   className="flex flex-col items-center justify-center mb-28 mt-28 scroll-mt-[200rem] "
+   className="flex flex-col items-center justify-center mb-14 sm:mb-28 mt-28 scroll-mt-[200rem] "
    id="home"
    data-id="1"
   >
@@ -21,8 +21,8 @@ export default function Hero({
     alt="img"
     className=" h-24 w-24 mb-3 rounded-full object-cover object-top border-[0.15rem] border-white shadow-xl "
    />
-   <div className="text-white  text-center mb-15 text-xl ">
-    <h1 className="font-lmroman text-2xl">Noman Ghaffar</h1>
+   <div className="text-white  text-center mb-15 text-lg sm:text-xl md:text-2xl   ">
+    <h1 className="font-lmroman text-lg sm:text-2xl ">Noman Ghaffar</h1>
     <p>
      Frontend Developer, MERN Stack
      <br />
@@ -31,9 +31,10 @@ export default function Hero({
      React, Node.js, Express & MongoDB
     </p>
    </div>
-   <div className="text-white flex  gap-2 items-center justify-center">
+   <div className="flex flex-col items-center gap-3 text-white sm:flex-row sm:flex-wrap sm:justify-center">
     <button
-     className="group flex items-center gap-2 bg-[#292f3d] px-7 py-3 rounded-full cursor-pointer   "
+     className="group flex w-full max-w-xs items-center justify-center gap-2 rounded-full bg-[#111827] px-7 py-3 sm:w-auto cursor-pointer transition-transform duration-300 ease-out 
+  hover:scale-115 hover:-translate-y-0.5"
      onClick={(e) => {
       e.preventDefault();
       setActiveTab(5);
@@ -45,27 +46,33 @@ export default function Hero({
      <BsArrowRight className="opacity-70 transition group-hover:translate-x-1" />
     </button>
     <a
-     className="group flex items-center gap-2 bg-[#292f3d] px-7 py-3 rounded-full cursor-pointer "
+     className="group flex w-full max-w-xs items-center justify-center gap-2 rounded-full bg-[#292f3d] px-7 py-3 sm:w-auto transition-transform duration-300 ease-out 
+  hover:scale-115 hover:-translate-y-0.5"
      href="https://drive.google.com/file/d/1ROAAuKDRNzhs7RXMmlMKpKf1g_LAiU2Z/view?usp=sharing"
      target="_blank"
     >
      Download CV{" "}
      <HiDownload className="opacity-60 transition group-hover:translate-y-1" />
     </a>
-    <a
-     href="https://www.linkedin.com/in/noman-ghaffar-dev/"
-     target="_blank"
-     className="bg-[#292f3d] p-4 rounded-full "
-    >
-     <FaLinkedin />
-    </a>
-    <a
-     href="https://github.com/NomanAdam"
-     target="_blank"
-     className="bg-[#292f3d] p-4 rounded-full"
-    >
-     <FaGithub />
-    </a>
+    <div className="flex gap-3">
+     <a
+      className="rounded-full bg-[#292f3d] p-4 transition transition-transform duration-300 ease-out 
+  hover:scale-115 hover:-translate-y-0.5"
+      target="_blank"
+      href="https://www.linkedin.com/in/noman-ghaffar-dev/"
+     >
+      <FaLinkedin />
+     </a>
+
+     <a
+      target="_blank"
+      className="rounded-full bg-[#292f3d] p-4 transition-transform duration-300 ease-out 
+  hover:scale-115 hover:-translate-y-0.5"
+      href="https://github.com/NomanAdam"
+     >
+      <FaGithub />
+     </a>
+    </div>
    </div>
   </div>
  );
