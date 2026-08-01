@@ -12,7 +12,7 @@ export default function Hero({
 }: NavbarProps) {
  return (
   <div
-   className="flex flex-col items-center justify-center mb-14 sm:mb-28 mt-28 scroll-mt-[200rem] "
+   className="flex flex-col items-center justify-center mb-14 sm:mb-26 mt-28 scroll-mt-[200rem] "
    id="home"
    data-id="1"
   >
@@ -21,7 +21,7 @@ export default function Hero({
     alt="img"
     className=" h-24 w-24 mb-3 rounded-full object-cover object-top border-[0.15rem] border-white shadow-xl "
    />
-   <div className="text-white  text-center mb-15 text-lg sm:text-xl md:text-2xl   ">
+   <div className="text-white  text-center mb-10 text-lg sm:text-xl md:text-2xl   ">
     <h1 className="font-lmroman text-lg sm:text-2xl ">Noman Ghaffar</h1>
     <p>
      Frontend Developer, MERN Stack
@@ -50,6 +50,7 @@ export default function Hero({
   hover:scale-115 hover:-translate-y-0.5"
      href="https://drive.google.com/file/d/1ROAAuKDRNzhs7RXMmlMKpKf1g_LAiU2Z/view?usp=sharing"
      target="_blank"
+     rel="noopener noreferrer"
     >
      Download CV{" "}
      <HiDownload className="opacity-60 transition group-hover:translate-y-1" />
@@ -59,6 +60,7 @@ export default function Hero({
       className="rounded-full bg-[#292f3d] p-4 transition transition-transform duration-300 ease-out 
   hover:scale-115 hover:-translate-y-0.5"
       target="_blank"
+      rel="noopener noreferrer"
       href="https://www.linkedin.com/in/noman-ghaffar-dev/"
      >
       <FaLinkedin />
@@ -66,6 +68,7 @@ export default function Hero({
 
      <a
       target="_blank"
+      rel="noopener noreferrer"
       className="rounded-full bg-[#292f3d] p-4 transition-transform duration-300 ease-out 
   hover:scale-115 hover:-translate-y-0.5"
       href="https://github.com/NomanAdam"
